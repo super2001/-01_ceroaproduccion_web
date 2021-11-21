@@ -1,6 +1,35 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import {
+  NButton,
+  Heading,
+  Picture,
+  Icon,
+  Input,
+  Spacer,
+  ButtonIcon,
+  Dropdown,
+} from "@super2001/lcomponents";
+
+const OPTIONS = [
+  {
+    text: "4:00 AM",
+    value: 800,
+  },
+  {
+    text: "5:00 AM",
+    value: 1000,
+  },
+  {
+    text: "6:00 PM",
+    value: 1300,
+  },
+  {
+    text: "7:00 PM",
+    value: 1500,
+  },
+];
 
 export default function Home() {
   return (
@@ -11,13 +40,35 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <NButton>Hola mundo</NButton>
+      <Heading size="md" color="primary">
+        Contenido heading
+      </Heading>
+      <Picture src="https://placeimg.com/400/400/any" width={100} />
+      <Icon />
+      <Icon type="arrowRight" />
+      <Icon type="angleDown" />
+      <Icon type="angleDown" hasBackground="true" />
+      <br />
+      <Input value="ff" placeholder="Nombres" />
+      <br />
+      <ButtonIcon />
+      <br />
+      <Dropdown onChange={undefined} options={OPTIONS} />
+      <br />
+      <Spacer size={8} isVisible />
+      <br />
+      <Spacer.Horizontal size={8} isVisible />
+      <br />
+      <Spacer.Vertical size={8} isVisible maxHeight={50} />
+
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -58,12 +109,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
